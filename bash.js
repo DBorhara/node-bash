@@ -4,11 +4,12 @@ process.stdout.write('prompt > ')
 process.stdin.on('data', (data) => {
   let cmd = data.toString().trim();
   if (cmd === 'pwd') {
-    cmd = pwd()
+    pwd()
   }
-  if (cmd === 'ls') {
-    cmd = + ls()
+  else if (cmd === 'ls') {
+    ls()
+  } else {
+    process.stdout.write('you typed:' + cmd);
+    process.stdout.write('\nprompt > ')
   }
-  process.stdout.write('you typed:' + cmd);
-  process.stdout.write('\nprompt > ')
 })
