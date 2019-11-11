@@ -1,5 +1,5 @@
 const pwd = require('./pwd')
-const fs = require('./fs')
+const ls = require('./ls')
 process.stdout.write('prompt > ')
 process.stdin.on('data', (data) => {
   let cmd = data.toString().trim();
@@ -7,7 +7,7 @@ process.stdin.on('data', (data) => {
     cmd = pwd()
   }
   if (cmd === 'ls') {
-    cmd = fs()
+    cmd = + ls()
   }
   process.stdout.write('you typed:' + cmd);
   process.stdout.write('\nprompt > ')
